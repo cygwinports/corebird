@@ -1,0 +1,18 @@
+inherit cmake
+
+NAME="corebird"
+VERSION=0.7
+RELEASE=1
+CATEGORY="Net"
+SUMMARY="GTK+ Twitter client"
+DESCRIPTION="Corebird is a modern, easy and fun Twitter client based on GTK+."
+HOMEPAGE="http://corebird.baedert.org/"
+SRC_URI="https://github.com/baedert/corebird/archive/${VERSION}/corebird-${VERSION}.tar.gz"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	CYGCMAKE_SOURCE=${B}
+	cygcmake -DGSETTINGS_COMPILE=OFF
+	cygmake
+}
