@@ -1,0 +1,11 @@
+--- origsrc/corebird-1.0/src/Makefile.am	2015-03-19 12:38:24.000000000 -0500
++++ src/corebird-1.0/src/Makefile.am	2015-06-22 19:28:25.386752900 -0500
+@@ -113,7 +113,7 @@ libcorebird_la_SOURCES = libcorebird_la_
+ 
+ corebird_SOURCES = main.vala resources.c
+ corebird_LDADD = libcorebird.la @CB_LIBS@
+-corebird_VALAFLAGS = corebird.vapi @CB_VALA_FLAGS@
++corebird_VALAFLAGS = $(abs_top_builddir)/src/corebird.vapi @CB_VALA_FLAGS@
+ main.vala: corebird.vapi corebird.h
+ 
+ 
