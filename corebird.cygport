@@ -1,26 +1,13 @@
 inherit gnome2
 
 NAME="corebird"
-VERSION=1.1
+VERSION=1.3.3
 RELEASE=1
 CATEGORY="Net"
 SUMMARY="GTK+ Twitter client"
 DESCRIPTION="Corebird is a modern, easy and fun Twitter client based on GTK+."
 HOMEPAGE="http://corebird.baedert.org/"
-SRC_URI="https://github.com/baedert/corebird/archive/${VERSION}/corebird-${VERSION}.tar.gz"
-PATCH_URI="
-	1.0-intltool.patch
-	1.0-vpath.patch
-	1.0-ximagesink.patch
-"
+SRC_URI="https://github.com/baedert/corebird/releases/download/${VERSION}/corebird-${VERSION}.tar.xz"
 
-DIFF_EXCLUDES="*.c *.stamp"
-
-src_compile() {
-	cd ${S}
-	gnome2_autoreconf
-	lndirs
-	cd ${B}
-	cygconf
-	cygmake
-}
+# for MediaVideoWidget
+REQUIRES="gstreamer1.0-plugins-gtk"
