@@ -1,7 +1,7 @@
 inherit gnome2
 
 NAME="corebird"
-VERSION=1.4.2
+VERSION=1.6
 RELEASE=1
 CATEGORY="Net"
 SUMMARY="GTK+ Twitter client"
